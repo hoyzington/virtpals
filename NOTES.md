@@ -1,27 +1,27 @@
-Models      Attributes
+Models    Attributes
             
-Creators    Email   Password
+Creators  Email  Password
   
-Virtpals    Name    Color   Texture   Mood    Energy  Height  Build     Story   Cr Id     Show  Love
-            -----------------------------------------------------------------------------------------
-            (Any)   Red     Smooth    Cheery  Low     Short   Thin      (Any)   (Cr Id)   true  (Qty)
-                    Green   Bumpy     Silly   Medium  Medium  Muscular                    false
-                    Blue    Furry     Stoked  High    Tall    Fat
+Virtpals  Name   Color  Texture  Mood    Height  Build    Story  Cr Id    Show 
+          ---------------------------------------------------------------------
+          (Any)  Red    Smooth   Cheery  Short   Thin     (Any)  (Cr Id)  true 
+                 Green  Bumpy    Silly   Medium  Muscular                 false
+                 Blue   Furry    Stoked  Tall    Fat
 
 Non-Creators can view the virtpal gallery or sign up. 
 
 Creators can log in or log out; create, modify, or destroy their virtpals.
 
-    Pages               Buttons
+    Pages             Buttons
 
-  Home/Examples       Signup, Login, View Individual      Love, Collection, Create, Logout
-  View Individual     Signup, Login, Examples             Love, Collection, Create, Logout
-  Signup              Submit, Examples
-  Login               Submit, Examples
-  -----------------------------------------------------
-  Collection          Show/Hide, View/Modify, Create, Examples, Logout
-  Create              Show/Hide, Submit, Collection~, Examples~, Logout~
-  View/Modify         Show/Hide, Submit, Collection~, Examples~, Logout~
+  Home/Examples     Signup, Login, View One    Love, Collection, Create, Logout
+  View One          Signup, Login, Examples    Love, Collection, Create, Logout
+  Signup            Submit, Examples
+  Login             Submit, Examples
+  --------------------------------------------------
+  Collection        Show/Hide, View/Modify, Create, Examples, Logout
+  Create            Show/Hide, Submit, Collection~, Examples~, Logout~
+  View/Modify       Show/Hide, Submit, Collection~, Examples~, Logout~
   
   
 
