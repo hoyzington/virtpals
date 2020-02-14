@@ -5,7 +5,6 @@ require './config/environment'
 #end
 
 use Rack::MethodOverride
-use SessionController
 use CreatorController
 use VirtpalController
 run ApplicationController

@@ -3,7 +3,7 @@ Models    Attributes
 Creators  Email  Password
   
 Virtpals  Name   Color  Texture  Mood    Height  Build    Cr Id    Show 
-          ---------------------------------------------------------------------
+          ---------------------------------------------------------------
           (Any)  Red    Smooth   Cheery  Short   Thin     (Cr Id)  true 
                  Green  Bumpy    Silly   Medium  Muscular          false
                  Blue   Furry    Stoked  Tall    Fat
@@ -15,8 +15,8 @@ Creators can log in or log out; create, modify, or destroy their virtpals.
     Pages             Buttons/Links
 
   Home              Signup, Login
-  Signup            Submit, Home
-  Login             Submit, Home
+  Signup            Submit
+  Login             Submit
   ------------------------------------------
   Account           Submit, Collection~
   Collection        Account, View/Modify, Create, Logout
