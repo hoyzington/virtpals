@@ -10,27 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_230059) do
-
-  create_table "creators", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "virtpals", force: :cascade do |t|
-    t.string "name"
-    t.text "story"
-    t.string "color"
-    t.string "texture"
-    t.string "height"
-    t.string "build"
-    t.string "mood"
-    t.boolean "show"
-    t.integer "cr_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

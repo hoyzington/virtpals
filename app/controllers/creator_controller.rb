@@ -1,3 +1,5 @@
+require 'pry'
+
 class CreatorController < ApplicationController
 
   get '/signup' do
@@ -5,7 +7,7 @@ class CreatorController < ApplicationController
   end
 
   post '/signup' do
-    if params[:email] == "" || params[:password] == ""
+    if params[:username] == "" || params[:password] == ""
       redirect to '/signup'
       flash[:message] = "Please enter email and password to sign in"
     else
@@ -21,14 +23,14 @@ class CreatorController < ApplicationController
   end
 
   post '/login' do
-    @creator = Creator.find_by_email(params[:email])
+    @creator = Creator.find_by_username(params[:username])
     if @creator and @creator.authenticate(params[:password])
       session[:user_id] = @creator.id
       redirect '/creators/home'
       flash[:message] = "Welcome back!"
     else
       redirect '/signup'
-      flash[:message] = "The email and/or password you provided are not on file"
+      flash[:message] = "The username and/or password you provided are not on file"
     end
   end
 
@@ -40,6 +42,7 @@ class CreatorController < ApplicationController
   get '/creators/home' do
     if logged_in
       @creator = current_user
+      @pals = Virtpal.all
       erb :'/creators/home'
     else
       redirect '/login'

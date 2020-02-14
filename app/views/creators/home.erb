@@ -1,5 +1,17 @@
-<h1>User Home</h1>
+  <br>
+<form action="/virtpals/new" method="get">
+  <input type="submit" value="Create">
+</form>
   <br>
 <form action="/logout" method="get">
-  <input type="submit" name="logout" value="Log Out">
+  <input type="submit" value="Log Out">
 </form>
+  <br><br><br>
+<% if @pals.empty? %>
+  <h4>You have no virtpals. Create some!</h4>
+<% else %>
+  <% @pals.each do |p| %>
+    <a href="/virtpals/#{p.id}"><%= p.name %></a>
+  <% end %>
+<% end %>
+  <br><br><br>
