@@ -1,28 +1,38 @@
 class VirtpalController < ApplicationController
 
   get '/virtpals/new' do
-
-    erb :'/virtpals/new'
+    logged_in ? (erb :'/virtpals/new') : (redirect '/login')
   end
 
   post '/virtpals' do
-    
-    redirect '/virtpals/:id'
+    if logged_in
+      Virtpal.create(params)
+      redirect '/creators/home'
+    else
+      redirect '/login'
+    end
   end
 
   get '/virtpals/:id/edit' do
-
-    erb :'/virtpals/edit'
+    logged_in ? (erb :'/virtpals/edit') : (redirect '/login')
   end
 
   patch '/virtpals/:id' do
-
-    redirect '/virtpals/:id'
+    if logged_in
+      
+      redirect '/virtpals/:id'
+    else
+      redirect '/login'
+    end
   end
 
   delete '/virtpals/:id' do
-
-    redirect '/virtpals'
+    if logged_in
+      
+      redirect '/virtpals'
+    else
+      redirect '/login'
+    end
   end
 
   get '/virtpals' do

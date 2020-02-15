@@ -9,12 +9,10 @@ class CreatorController < ApplicationController
   post '/signup' do
     if params[:username] == "" || params[:password] == ""
       redirect to '/signup'
-      flash[:message] = "Please enter email and password to sign in"
     else
       @creator = Creator.create(params)
       session[:user_id] = @creator.id
       redirect '/creators/home'
-      flash[:message] = "Congratulations! You are now a virtpal creator!"
     end
   end
   
@@ -27,10 +25,8 @@ class CreatorController < ApplicationController
     if @creator and @creator.authenticate(params[:password])
       session[:user_id] = @creator.id
       redirect '/creators/home'
-      flash[:message] = "Welcome back!"
     else
       redirect '/signup'
-      flash[:message] = "The username and/or password you provided are not on file"
     end
   end
 
@@ -46,7 +42,6 @@ class CreatorController < ApplicationController
       erb :'/creators/home'
     else
       redirect '/login'
-      flash[:message] = "You are not logged in"
     end
   end
 
@@ -56,7 +51,6 @@ class CreatorController < ApplicationController
       erb :'/creators/edit'
     else
       redirect '/login'
-      flash[:message] = "You are not logged in"
     end
   end
 
@@ -64,10 +58,8 @@ class CreatorController < ApplicationController
     if logged_in
       current_user.update(params)
       erb :'/creators/edit'
-      flash[:message] = "Your changes have been saved"
     else
       redirect '/login'
-      flash[:message] = "You are not logged in"
     end
   end
 
