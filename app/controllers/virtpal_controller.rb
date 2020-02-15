@@ -1,3 +1,5 @@
+require 'pry'
+
 class VirtpalController < ApplicationController
 
   get '/virtpals/new' do
@@ -24,8 +26,17 @@ class VirtpalController < ApplicationController
 
   patch '/virtpals/:id' do
     if logged_in
-      params[:id].update(params)
-      redirect '/virtpals/:id/edit'
+      if params[:name] == ""
+        redirect to "/virtpals/#{params[:id]}/edit"
+      else
+        @pal = Virtpal.find_by_id(params[:id])
+        if @pal and @pal.creator == current_user
+          @pal.update(params)
+          redirect "/virtpals/#{@pal.id}/edit"
+        else
+          redirect '/creators/home'
+        end
+      end
     else
       redirect '/login'
     end

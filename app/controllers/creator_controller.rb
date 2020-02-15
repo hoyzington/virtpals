@@ -56,8 +56,13 @@ class CreatorController < ApplicationController
 
   patch '/creators/:id' do
     if logged_in
-      current_user.update(params)
-      erb :'/creators/edit'
+      if (params[:username] == "") or (params[:username] == "")
+        redirect to "/creators/#{params[:id]}/edit"
+      else
+        @cr = Creator.find_by_id(params[:id])
+        @cr.update(params)
+        redirect '/creators/home'
+      end
     else
       redirect '/login'
     end

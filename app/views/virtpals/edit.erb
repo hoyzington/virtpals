@@ -1,39 +1,43 @@
-<h2>Examination/Modification Lab</h2>
+<h2>Examination/Modification/Recycling Lab</h2>
 <p><a href="/creators/home">Return to your Gallery</a></p>
   <br>
 <form action="/virtpals/<%= @pal.id %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
-  <h3><label>Name:  <%= @pal.name %> </label>
-    <input type="text" name="name"></h3><br>
-  <h3><label>Color:  <%= @pal.color %> </label>
+  <h3><label>Name</label>
+    <input type="text" name="name" value="<%= @pal.name %>"></h3><br>
+  <h3><label>Color</label>
     <select name="color">
       <option value="blue" selected>Blue</option>
       <option value="red">Red</option>
       <option value="green">Green</option>
     </select></h3><br>
-  <h3><label>Texture:  <%= @pal.texture %> </label>
+  <h3><label>Texture</label>
     <select name="texture">
       <option value="smooth" selected>Smooth</option>
       <option value="bumpy">Bumpy</option>
       <option value="furry">Furry</option>
     </select></h3><br>
-  <h3><label>Mood:  <%= @pal.mood %> </label>
+  <h3><label>Mood</label>
     <select name="mood">
       <option value="happy" selected>Happy</option>
       <option value="silly">Silly</option>
       <option value="stoked">Stoked</option>
     </select></h3><br>
-  <h3><label>Height:  <%= @pal.height %> </label>
+  <h3><label>Height</label>
     <select name="height">
       <option value="short" selected>Short</option>
       <option value="medium">Medium</option>
       <option value="tall">Tall</option>
     </select></h3><br>
-  <h3><label>Build:  <%= @pal.build %> </label>
+  <h3><label>Build</label>
     <select name="build">
       <option value="thin" selected>Thin</option>
       <option value="muscular">Muscular</option>
       <option value="fat">Fat</option>
     </select></h3><br>
   <input type="submit" value="Modify">
+</form><br>
+<form action="/virtpals/<%= @pal.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Recycle <%= @pal.name %>">
 </form><br>
