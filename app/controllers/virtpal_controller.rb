@@ -14,13 +14,18 @@ class VirtpalController < ApplicationController
   end
 
   get '/virtpals/:id/edit' do
-    logged_in ? (erb :'/virtpals/edit') : (redirect '/login')
+    if logged_in
+      @pal = Virtpal.find_by_id(params[:id])
+      erb :'/virtpals/edit'
+    else
+      redirect '/login'
+    end
   end
 
   patch '/virtpals/:id' do
     if logged_in
-      
-      redirect '/virtpals/:id'
+      params[:id].update(params)
+      redirect '/virtpals/:id/edit'
     else
       redirect '/login'
     end
@@ -28,7 +33,7 @@ class VirtpalController < ApplicationController
 
   delete '/virtpals/:id' do
     if logged_in
-      
+      Virtpal.find_by_id(params[:id]).destroy
       redirect '/virtpals'
     else
       redirect '/login'

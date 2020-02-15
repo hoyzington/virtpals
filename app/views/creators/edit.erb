@@ -1,7 +1,7 @@
 <h2>Account Info</h2>
   <br>
-<form action="/creators/<%= @creator.id %>" method="post">
-  <input type="hidden" name="hidden" value="patch">
+<form action="/creators/<%= @creator.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
   <h4><label>Username:</label>
   <input type="text" name="username" value="<%= @creator.username %>"></h4><br>
   <h4><label>Password:</label>

@@ -1,21 +1,21 @@
 <h2>Virtpal Gallery</h2><br>
-<form action="/creators/<%= @creator.id %>/edit" method="get">
+<form action="/creators/<%= @creator.id %>/edit" method="GET">
   <input type="submit" value="Account">
 </form>
   <br>
-<form action="/logout" method="get">
+<form action="/logout" method="GET">
   <input type="submit" value="Log Out">
 </form>
   <br><br>
 <% if @pals.empty? %>
   <h4>You have no virtpals. Create some!</h4><br>
 <% end %>
-<form action="/virtpals/new" method="get">
+<form action="/virtpals/new" method="GET">
   <input type="submit" value="Create">
-</form>
+</form><br>
 <% if !@pals.empty? %>
   <% @pals.each do |p| %>
-    <a href="/virtpals/#{p.id}"><%= p.name %></a>
+    <a href="/virtpals/<%= p.id %>/edit"><%= p.name %></a>
   <% end %>
 <% end %>
-  <br><br><br>
+  <br><br>
