@@ -3,37 +3,37 @@
   <br>
 <form action="/virtpals/<%= @pal.id %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
-  <h3><label>Name</label>
-    <input type="text" name="name" value="<%= @pal.name %>"></h3><br>
-  <h3><label>Color</label>
+  <h3><label>Name: <%= @pal.name %></label>
+    <input type="text" name="name"></h3><br>
+  <h3><label>Color: <%= @pal.color %></label>
     <select name="color">
-      <option value="blue" selected>Blue</option>
-      <option value="red">Red</option>
-      <option value="green">Green</option>
+      <option value="blue" selected>blue</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
     </select></h3><br>
-  <h3><label>Texture</label>
+  <h3><label>Texture: <%= @pal.texture %></label>
     <select name="texture">
-      <option value="smooth" selected>Smooth</option>
-      <option value="bumpy">Bumpy</option>
-      <option value="furry">Furry</option>
+      <option value="smooth" selected>smooth</option>
+      <option value="bumpy">bumpy</option>
+      <option value="furry">furry</option>
     </select></h3><br>
-  <h3><label>Mood</label>
+  <h3><label>Mood: <%= @pal.mood %></label>
     <select name="mood">
-      <option value="happy" selected>Happy</option>
-      <option value="silly">Silly</option>
-      <option value="stoked">Stoked</option>
+      <option value="happy" selected>happy</option>
+      <option value="silly">silly</option>
+      <option value="stoked">stoked</option>
     </select></h3><br>
-  <h3><label>Height</label>
+  <h3><label>Height: <%= @pal.height %></label>
     <select name="height">
-      <option value="short" selected>Short</option>
-      <option value="medium">Medium</option>
-      <option value="tall">Tall</option>
+      <option value="short" selected>short</option>
+      <option value="medium">medium</option>
+      <option value="tall">tall</option>
     </select></h3><br>
-  <h3><label>Build</label>
+  <h3><label>Build: <%= @pal.build %></label>
     <select name="build">
-      <option value="thin" selected>Thin</option>
-      <option value="muscular">Muscular</option>
-      <option value="fat">Fat</option>
+      <option value="thin" selected>thin</option>
+      <option value="muscular">muscular</option>
+      <option value="fat">fat</option>
     </select></h3><br>
   <input type="submit" value="Modify">
 </form><br>
