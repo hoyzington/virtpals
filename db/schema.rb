@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_230059) do
     t.string "build"
     t.string "mood"
     t.boolean "show"
-    t.integer "cr_id"
+    t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

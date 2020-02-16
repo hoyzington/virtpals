@@ -8,7 +8,7 @@ class CreateVirtpals < ActiveRecord::Migration[6.0]
       t.string :build
       t.string :mood
       t.boolean :show
-      t.integer :cr_id
+      t.integer :creator_id
       t.timestamps 
     end
   end

@@ -8,7 +8,9 @@ class VirtpalController < ApplicationController
 
   post '/virtpals' do
     if logged_in
-      Virtpal.create(params)
+      pal = Virtpal.new(params)
+      pal.creator = Creator.find_by_id(session[:user_id])
+      pal.save
       redirect '/creators/home'
     else
       redirect '/login'
@@ -26,17 +28,17 @@ class VirtpalController < ApplicationController
 
   patch '/virtpals/:id' do
     if logged_in
-      if params[:name] == ""
-        redirect to "/virtpals/#{params[:id]}/edit"
-      else
+  #    if params[:name] == ""
+  #      redirect to "/virtpals/#{params[:id]}/edit"
+  #    else
         @pal = Virtpal.find_by_id(params[:id])
         if @pal and @pal.creator == current_user
-          @pal.update(params)
+          @pal.update(params[:vp])
           redirect "/virtpals/#{@pal.id}/edit"
         else
           redirect '/creators/home'
         end
-      end
+#      end
     else
       redirect '/login'
     end
@@ -45,7 +47,7 @@ class VirtpalController < ApplicationController
   delete '/virtpals/:id' do
     if logged_in
       Virtpal.find_by_id(params[:id]).destroy
-      redirect '/virtpals'
+      redirect '/creators/home'
     else
       redirect '/login'
     end

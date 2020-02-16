@@ -1,6 +1,6 @@
 class Creator < ActiveRecord::Base
 
-  has_many :virtpal
+  has_many :virtpals
 
   has_secure_password
 
