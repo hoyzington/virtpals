@@ -32,6 +32,7 @@ class VirtpalController < ApplicationController
   #      redirect to "/virtpals/#{params[:id]}/edit"
   #    else
         @pal = Virtpal.find_by_id(params[:id])
+#binding.pry
         if @pal and @pal.creator == current_user
           @pal.update(params[:vp])
           redirect "/virtpals/#{@pal.id}/edit"

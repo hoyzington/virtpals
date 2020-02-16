@@ -1,42 +1,54 @@
 <h2>Examination/Modification/Recycling Lab</h2>
-<p><a href="/creators/home">Return to your Gallery</a></p>
+<p><a href="/creators/home">Return to Your Gallery</a></p>
   <br>
+
 <form action="/virtpals/<%=@pal.id%>" method="post">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
+
   <h3><label>Name</label>
-    <input type="text" name="vp[name]" value="<%=@pal.name%>"></h3><br>
+    <input type="text" name="vp[name]" value="<%=@pal.name%>"></h3>
+
   <h3><label>Color</label>
     <select name="vp[color]">
       <option value="blue" <%='selected' if @pal.color == 'blue'%>>blue</option>
       <option value="red" <%='selected' if @pal.color == 'red'%>>red</option>
       <option value="green" <%='selected' if @pal.color == 'green'%>>green</option>
-    </select></h3><br>
+    </select></h3>
+
   <h3><label>Height</label>
     <select name="vp[height]">
       <option value="short" <%='selected' if @pal.height == 'short'%>>short</option>
       <option value="medium" <%='selected' if @pal.height == 'medium'%>>medium</option>
       <option value="tall" <%='selected' if @pal.height == 'tall'%>>tall</option>
-    </select></h3><br>
+    </select></h3>
+
   <h3><label>Build</label>
     <select name="vp[build]">
       <option value="thin" <%='selected' if @pal.build == 'thin'%>>thin</option>
       <option value="muscular" <%='selected' if @pal.build == 'muscular'%>>muscular</option>
       <option value="fat" <%='selected' if @pal.build == 'fat'%>>fat</option>
-    </select></h3><br>
+    </select></h3>
+
   <h3><label>Texture</label>
     <select name="vp[texture]">
       <option value="smooth" <%='selected' if @pal.texture == 'smooth'%>>smooth</option>
       <option value="bumpy" <%='selected' if @pal.texture == 'bumpy'%>>bumpy</option>
       <option value="furry" <%='selected' if @pal.texture == 'furry'%>>furry</option>
-    </select></h3><br>
+    </select></h3>
+
   <h3><label>Mood</label>
     <select name="vp[mood]">
       <option value="happy" <%='selected' if @pal.mood == 'happy'%>>happy</option>
       <option value="silly" <%='selected' if @pal.mood == 'silly'%>>silly</option>
       <option value="stoked" <%='selected' if @pal.mood == 'stoked'%>>stoked</option>
     </select></h3><br>
+    
+  <input type="radio" name="vp[show]" value="true" <%='checked' if @pal.show == true%>> Show On-Screen<br>
+  <input type="radio" name="vp[show]" value="false" <%='checked' if @pal.show == false%>> Hide<br><br>
+
   <input type="submit" value="Modify">
-</form><br>
+</form><br><br>
+
 <form action="/virtpals/<%=@pal.id%>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Recycle <%=@pal.name%>">

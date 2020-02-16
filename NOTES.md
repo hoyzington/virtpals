@@ -51,3 +51,33 @@ Virtpals    Name,   Color,    Texture,      Mood,     Energy  Height  Build     
                     Purple    Short Spikes  Stoked
                     Blue      Long Spikes   Silly
                                             Smart
+
+
+
+"           __
+"          /  \
+"         |o`'o|    
+"     d---| <> |---b
+"         |    |
+"          \__/
+"          |  |
+"          |  |
+"         _|  |_
+"
+"           __
+"          /  \ 
+"         / ^ ^\
+"    X---|   =  |---X
+"        |      |
+"         \____/
+"          |  |
+"         _|  |_
+"
+"          ____
+"         /    \
+"        /  O ^ \    
+"   }---|   ( ~) |---{
+"       |        |  
+"        \______/   
+"         _|  |_
+" 
