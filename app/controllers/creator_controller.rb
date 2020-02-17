@@ -38,7 +38,7 @@ class CreatorController < ApplicationController
   get '/creators/home' do
     if logged_in
       @creator = current_user
-      @pals = Virtpal.all
+      @pals = current_user.virtpals
       erb :'/creators/home'
     else
       redirect '/login'
