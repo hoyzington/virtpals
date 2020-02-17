@@ -28,21 +28,26 @@ class VirtpalController < ApplicationController
 
   patch '/virtpals/:id' do
     if logged_in
-  #    if params[:name] == ""
-  #      redirect to "/virtpals/#{params[:id]}/edit"
-  #    else
+      if params[:vp][:name] == ""
+        redirect to "/virtpals/#{params[:id]}/edit"
+      else
         @pal = Virtpal.find_by_id(params[:id])
-#binding.pry
+ #binding.pry
         if @pal and @pal.creator == current_user
           @pal.update(params[:vp])
           redirect "/virtpals/#{@pal.id}/edit"
         else
           redirect '/creators/home'
         end
-#      end
+      end
     else
       redirect '/login'
     end
+  end
+
+  get '/virtpals/:id' do
+    @pal = Virtpal.find_by_id(params[:id])
+    erb :'/virtpals/show'
   end
 
   delete '/virtpals/:id' do

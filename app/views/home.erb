@@ -1,7 +1,12 @@
 <h2>Make some new friends!</h2>
-<h3><a href="/login">Log In</a></h3>
-<h3>or</h3>
-<h3><a href="/signup">Sign Up</a></h3>
-  <br>
+
 <p>Virtpals are the cutest little monsterbots to ever roam the screens of your devices!</p>
 <p>Create, and modify your virtpals. Choose which ones and how many to display on screen. They're even recyclable, if for some reason you want to get rid of some (it's okay--virtpals are not self-aware!).</p>
+
+<h3><a href="/login">Log In</a>  or  <a href="/signup">Sign Up</a></h3><br>
+
+<p>Check out these guys! The handiwork of creators like you!</p><br>
+
+<% @pals.each do |p| %>
+  <a href="/virtpals/<%= p.id %>"><%= p.name %></a><br>
+<% end %><br>

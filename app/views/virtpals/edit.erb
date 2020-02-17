@@ -6,7 +6,7 @@
   <input id="hidden" type="hidden" name="_method" value="PATCH">
 
   <h3><label>Name</label>
-    <input type="text" name="vp[name]" value="<%=@pal.name%>"></h3>
+    <input type="text" name="vp[name]" value="<%=@pal.name%>" required></h3>
 
   <h3><label>Color</label>
     <select name="vp[color]">
@@ -24,8 +24,8 @@
 
   <h3><label>Build</label>
     <select name="vp[build]">
-      <option value="thin" <%='selected' if @pal.build == 'thin'%>>thin</option>
-      <option value="muscular" <%='selected' if @pal.build == 'muscular'%>>muscular</option>
+      <option value="skinny" <%='selected' if @pal.build == 'skinny'%>>skinny</option>
+      <option value="medium" <%='selected' if @pal.build == 'medium'%>>medium</option>
       <option value="fat" <%='selected' if @pal.build == 'fat'%>>fat</option>
     </select></h3>
 

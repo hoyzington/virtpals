@@ -20,7 +20,12 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/" do
-    logged_in ? (erb :'/creators/home') : (erb :home)
+    if logged_in
+      redirect '/creators/home'
+    else
+      @pals = Virtpal.all
+      erb :home
+    end
   end
 
   get "/index" do
