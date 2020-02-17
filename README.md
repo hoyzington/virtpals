@@ -10,7 +10,7 @@ Clone this app and then execute:
 
 ## Usage
 
-From the `virtpals` directory, run `./`.
+Enter `shotgun` into the CLI. Then go to `http://127.0.0.1:9393/` 
 
 ## Contributing
 
