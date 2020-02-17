@@ -10,6 +10,7 @@ class VirtpalController < ApplicationController
     if logged_in
       pal = Virtpal.new(params)
       pal.creator = Creator.find_by_id(session[:user_id])
+      pal.show = true
       pal.save
       redirect '/creators/home'
     else
@@ -20,7 +21,6 @@ class VirtpalController < ApplicationController
   get '/virtpals/:id/edit' do
     if logged_in
       @pal = Virtpal.find_by_id(params[:id])
-#binding.pry
       if @pal.creator_id == session[:user_id]
         erb :'/virtpals/edit'
       else
@@ -37,7 +37,6 @@ class VirtpalController < ApplicationController
         redirect to "/virtpals/#{params[:id]}/edit"
       else
         @pal = Virtpal.find_by_id(params[:id])
- #binding.pry
         if @pal and @pal.creator == current_user
           @pal.update(params[:vp])
           redirect "/virtpals/#{@pal.id}/edit"
