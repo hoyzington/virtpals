@@ -37,7 +37,6 @@ class CreatorController < ApplicationController
 
   get '/creators/home' do
     if logged_in
-      @creator = current_user
       @pals = current_user.virtpals
       erb :'/creators/home'
     else
@@ -46,15 +45,7 @@ class CreatorController < ApplicationController
   end
 
   get '/creators/:id' do
-    if logged_in
-      if params[:id] == current_user
-        @creator = current_user
-        @pals = current_user.virtpals
-        erb :'/creators/home'
-      else
-    else
-      redirect '/login'
-    end
+    redirect '/creators/home'
   end
 
 end
