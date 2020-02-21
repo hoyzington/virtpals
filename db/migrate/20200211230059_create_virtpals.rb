@@ -3,7 +3,6 @@ class CreateVirtpals < ActiveRecord::Migration[6.0]
     create_table :virtpals do |t|
       t.string :name
       t.string :color
-      t.string :texture
       t.string :height
       t.string :build
       t.string :mood

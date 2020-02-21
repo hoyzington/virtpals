@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2020_02_11_230059) do
   create_table "virtpals", force: :cascade do |t|
     t.string "name"
     t.string "color"
-    t.string "texture"
     t.string "height"
     t.string "build"
     t.string "mood"
