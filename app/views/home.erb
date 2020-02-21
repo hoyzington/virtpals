@@ -8,5 +8,12 @@
 <p>Check out these guys! The handiwork of creators like you! (Click on them to see their stats)</p><br>
 
 <% @pals.each do |p| %>
-  <p><a href="/virtpals/<%= p.id %>"><%= p.name %></p><br>
+  <% p.settings %>
+  <% vp = p.creation %>
+  <p style="color: <%= Virtpal.options["color"][p.color] %>;">
+    <% vp.each do |line| %>
+      <%= line %><br>
+    <% end %>
+    <a href="/virtpals/<%= p.id %>"><%= p.name %></a></p>
+  <br>
 <% end %>
