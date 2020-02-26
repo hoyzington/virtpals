@@ -3,7 +3,9 @@ require 'pry'
 class VirtpalController < ApplicationController
 
   get '/virtpals/new' do
-    logged_in ? (erb :'/virtpals/new') : (redirect '/login')
+    redirect_if_not_logged_in
+    erb :'/virtpals/new'
+    #logged_in ? (erb :'/virtpals/new') : (redirect '/login')
   end
 
   post '/virtpals' do

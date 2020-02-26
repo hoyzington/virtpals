@@ -18,6 +18,10 @@ class ApplicationController < Sinatra::Base
       @current_user ||= Creator.find_by_id(session[:user_id]) if session[:user_id]
     end
   end
+
+  def redirect_if_not_logged_in
+    redirect '/login' if !logged_in
+  end
   
   get "/" do
     if logged_in
